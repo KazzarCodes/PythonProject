@@ -1,0 +1,12 @@
+﻿{% extends "app/base.html" %}
+{% block content %}
+    {% for project in projects %}
+        <article class="media content-section">
+          <div class="media-body">
+            <h2><a class="article-title" href="{% url 'project-detail' project.id %}">{{ project.projectName }}</a></h2>
+            <p class="article-content">{{ project.client }}</p>
+            <p class="article-content">{{ project.projectStatus }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,12 @@
+﻿{% extends "app/base.html" %}
+{% block content %}
+    {% for client in clients %}
+        <article class="media content-section">
+          <div class="media-body">
+            <h2><a class="article-title" href="{% url 'client-detail' client.id %}">{{ client.clientName }}</a></h2>
+            <p class="article-content">{{ client.contactPerson }}</p>
+            <p class="article-content">{{ client.contactNumber }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
